@@ -246,6 +246,10 @@ Runs a cronjob by code.
 ```sh
 n98-magerun2.phar sys:cron:run [job]
 ```
+Example:
+```sh
+n98-magerun2.phar sys:cron:run currency_rates_update
+```
 
 If no `job` argument is passed you can select a job from a list.
 
