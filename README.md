@@ -124,6 +124,10 @@ n98-magerun2.phar  customer:list --format=csv
 ```sh
 n98-magerun2.phar customer:change-password [email] [password] [website]
 ```
+Example:
+```sh
+n98-magerun2.phar customer:change-password test@gmail.com NewPassword base
+```
 
 - Website parameter must only be given if more than one websites are available.
 
@@ -131,6 +135,10 @@ n98-magerun2.phar customer:change-password [email] [password] [website]
 
 ```sh
 n98-magerun2.phar customer:token:create <email>
+```
+Example:
+```sh
+n98-magerun2.phar customer:token:create test@gmail.com
 ```
 
 ### Delete customer
@@ -154,38 +162,6 @@ In addition, you can delete a range of customer ids or delete all customers.
 
 ---
 
-### Magento Installer
-
-- Downloads Composer (if not already installed)
-- Downloads Magento 2.
-- Tries to create database if it does not exist.
-- Installs Magento sample data.
-- Starts Magento installer
-- Sets rewrite base in .htaccess file
-
-Interactive installer:
-
-```sh
-n98-magerun2.phar install
-```
-
-Unattended installation:
-
-```sh
-n98-magerun2.phar install [--magentoVersion[="..."]] [--magentoVersionByName[="..."]] [--installationFolder[="..."]] [--dbHost[="..."]] [--dbUser[="..."]] [--dbPass[="..."]] [--dbName[="..."]] [--installSampleData[="..."]] [--useDefaultConfigParams[="..."]] [--baseUrl[="..."]] [--replaceHtaccessFile[="..."]]
-```
-
-Example of an unattended Magento CE 2.0.0.0 dev beta 1 installation:
-
-```sh
-n98-magerun2.phar install --dbHost="localhost" --dbUser="mydbuser" --dbPass="mysecret" --dbName="magentodb" --installSampleData=yes --useDefaultConfigParams=yes --magentoVersionByName="magento-ce-2.0.0.0-dev-beta1" --installationFolder="magento2" --baseUrl="http://magento2.localdomain/"
-```
-
-Additionally, with `--noDownload` option you can install Magento working
-copy already stored in `--installationFolder` on the given database.
-
----
-
 ### Magento System Info
 
 Provides infos like the edition, version or the configured cache
@@ -194,7 +170,42 @@ backends, amount of data or installed packages.
 ```sh
 n98-magerun2.phar sys:info
 ```
+Output Looks Like:
+```sh
++--------------------------------------------------+--------------------------------------------------------------------+
+| name                                             | value                                                              |
++--------------------------------------------------+--------------------------------------------------------------------+
+| Name                                             | Magento                                                            |
+| Version                                          | 2.4.6                                                              |
+| Edition                                          | Community                                                          |
+| Root                                             | /home/maulik/htdocs/maulik.com                                     |
+| Application Mode                                 | developer                                                          |
+| Session                                          | files                                                              |
+| Crypt Key                                        | 458e5639f113bb68e13ecd6b3a903872                                   |
+| Install Date                                     | Wed, 07 Jun 2023 14:03:37 +0000                                    |
+| Search Engine                                    | elasticsearch7                                                     |
+| Cache Backend                                    | Cm_Cache_Backend_File                                              |
+| Vendors                                          | Magento, FireGento, Jeel, Mageplaza, PayPal, Phillipsking, Temando |
+| Module Count                                     | 353                                                                |
+| Attribute Count                                  | 200                                                                |
+| Customer Count                                   | 29                                                                 |
+| Category Count                                   | 48                                                                 |
+| Product Count                                    | 2095                                                               |
+| Admin User Count                                 | 2                                                                  |
+| Composer Lock File                               | found                                                              |
+| Composer Package Count                           | 587                                                                |
+| Magento Composer Root Update Plugin              | installed                                                          |
+| Magento Composer Dependency Version Audit Plugin | installed                                                          |
+| Magento Coding Standard Package                  | installed                                                          |
+| Magento Functional Testing Framework             | installed                                                          |
+| MSI Packages                                     | installed                                                          |
+| Sample Data Packages                             | installed                                                          |
+| Hyva Default Theme                               | not installed                                                      |
+| Hyva Theme Module                                | not installed                                                      |
++--------------------------------------------------+--------------------------------------------------------------------+
 
+
+```
 **Options:**
 
 | Option   | Description        |
