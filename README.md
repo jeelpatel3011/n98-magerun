@@ -41,11 +41,9 @@ Now you can verify it:
 ./n98-magerun2.phar --version
 ```
 
-The command should execute successfully and show you the version number
-of N98-Magerun like:
+The command show you the version number of N98-Magerun like:
 
 `n98-magerun2 7.1.0 (commit: 9f38409) by netz98 GmbH`
-
 
 ## Usage / Commands
 
@@ -83,7 +81,7 @@ Example
 ```sh
 n98-magerun2.phar  customer:info test@gmail.com base
 ```
-
+---
 ### Create customer
 
 Creates a new customer.
@@ -103,7 +101,7 @@ You can add additional any number of custom fields, example:
 ```sh
 n98-magerun2.phar customer:create foo@example.com passworD123 John Doe base taxvat DE12345678 prefix Mrs.
 ```
-
+---
 ### List Customers
 
 List customers. The output is limited to 1000 (can be changed by
@@ -118,7 +116,7 @@ Example:
 n98-magerun2.phar  customer:list --format=csv
 ```
 - --format have values like csv,json,xml 
-
+---
 ### Change customer password
 
 ```sh
@@ -130,7 +128,7 @@ n98-magerun2.phar customer:change-password test@gmail.com NewPassword base
 ```
 
 - Website parameter must only be given if more than one websites are available.
-
+---
 ### Create Customer Token for Webapi
 
 ```sh
@@ -140,7 +138,7 @@ Example:
 ```sh
 n98-magerun2.phar customer:token:create test@gmail.com
 ```
-
+---
 ### Delete customer
 
 ```sh
@@ -221,6 +219,7 @@ Lists all store views.
 ```sh
 n98-magerun2.phar sys:store:list [--format[="..."]]
 ```
+- --format is optional
 
 ### Magento Websites
 
@@ -229,7 +228,7 @@ Lists all websites.
 ```sh
 n98-magerun2.phar sys:website:list [--format[="..."]]
 ```
-
+- --format is optional
 ---
 
 ### List Cronjobs
@@ -239,7 +238,7 @@ Lists all cronjobs defined in crontab.xml files.
 ```sh
 n98-magerun2.phar sys:cron:list [--format[="..."]]
 ```
-
+- --format is optional
 ### Run Cronjobs
 
 Runs a cronjob by code.
@@ -249,8 +248,6 @@ n98-magerun2.phar sys:cron:run [job]
 ```
 
 If no `job` argument is passed you can select a job from a list.
-See it in action: <http://www.youtube.com/watch?v=QkzkLgrfNaM>
-If option schedule is present, cron is not launched, but just scheduled immediately in magento crontab.
 
 ### Kill a running job
 
@@ -258,18 +255,20 @@ If option schedule is present, cron is not launched, but just scheduled immediat
 n98-magerun2.phar sys:cron:kill [--timeout <seconds>] [job_code]
 ```
 
-If no job is specified a interactive selection of all running jobs is shown.
+If no job is specified you get a list of job_code
+
 Jobs can only be killed if the process runs on the same machine as n98-magerun2.
 
 Default timeout of a process kill is 5 seconds.
 
 ### Cronjob History
 
-Last executed cronjobs with status.
+List executed cronjobs with status.
 
 ```sh
 n98-magerun2.phar sys:cron:history [--format[="..."]] [--timezone[="..."]]
 ```
+- --format is optional
 
 ---
 
