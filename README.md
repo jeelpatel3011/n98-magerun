@@ -1,4 +1,4 @@
-# n98-magerun
+# n98-magerun Docs
 
 The n98 magerun CLI Tools provides some handy tools to work with Magento / Mage-OS / Adobe Commerce
 from command line.
