@@ -55,8 +55,8 @@ You can list all available commands by:
 n98-magerun2.phar list
 ```
 
-Important: If you don't have the .phar file installed system wide you can call it
-with the PHP CLI interpreter:
+`Important: If you don't have the .phar file installed system wide you can call it
+with the PHP CLI interpreter:`
 
 ```sh
 php n98-magerun2.phar list
