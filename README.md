@@ -65,7 +65,7 @@ php n98-magerun2.phar list
 ```sh
 n98-magerun2.phar open-browser [store]
 ```
-- You will get list of store to open in browser. And remember that you require commands like xdg-open, gnome-open, kde–open to open store in browser.
+- You will get list of store to select and open in browser. And remember that you require commands like xdg-open, gnome-open, kde–open to open store url in browser.
 
 
 ---
